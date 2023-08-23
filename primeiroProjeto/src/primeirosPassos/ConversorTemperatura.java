@@ -1,4 +1,4 @@
-package primeiroProjeto;
+package primeirosPassos;
 
 import javax.swing.JOptionPane;
 

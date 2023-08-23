@@ -1,4 +1,4 @@
-package primeiroProjeto;
+package primeirosPassos;
 
 public class Main {
 
