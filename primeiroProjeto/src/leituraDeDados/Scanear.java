@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Scanear {
 
 	public static void main(String[] args) {
-		/*INSTANCIANDO UM OBJETO SCANNER COM O PARAMETRO System.in QUE REALIZA LEITURAS DO TECLADO
+		/*CONSTRUINDO UM OBJETO SCANNER COM O PARAMETRO System.in QUE REALIZA LEITURAS DO TECLADO
 		DIFERENTE DO JOPTIONPANE, O Scanner SOLICITA A ENTRADA DE DADOS NO CONSOLE
 		*/
 		Scanner leitura = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class Scanear {
 		String ano = leitura.nextLine();
 		System.out.println(ano);
 		System.out.println("Qual é a nota que você dá para o filme?");
-		//INFORME A NOTA CONFORME O IDIOMA DO TECLADO LOCAL (EX: PT-BR = 9,9)
+		//INFORME A NUMERAÇÃO CONFORME O IDIOMA DO TECLADO LOCAL (EX: PT-BR = 9,9)
 		double nota = leitura.nextDouble();
 		System.out.println(nota);
 	}
