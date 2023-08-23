@@ -1,7 +1,7 @@
-package screenmatch;
+package br.com.alura.screenmatch.modelos;
 
 public class Filme {
-	private String nome;
+	public String nome;
 	private int anoDeLancamento;
 	boolean incluidoNoPlano;
 	private double avaliacao;
@@ -10,7 +10,7 @@ public class Filme {
 	int duracaoEmMinutos;
 	
 	//VOID NÃO DEVOLVE VALORES
-	void exibeFichaTecnica() {
+	public void exibeFichaTecnica() {
 		System.out.println("Nome do filme: " + nome);
 		System.out.println("Ano de lançamento: " + anoDeLancamento);
 		System.out.println("Incluido no plano: " + incluidoNoPlano);
@@ -18,18 +18,18 @@ public class Filme {
 	}
 	
 	//MÉTODO QUE RECEBE UM PARAMETRO DO TIPO DOUBLE
-	void avalia(double nota) {
+	public void avalia(double nota) {
 		somaDasAvaliacoes += nota;
 		totalDeAvaliacoes++;
 	}
 	
 	//MÉTODO COM TIPO DEFINIDO RETORNAM VALORES
-	double pegaMedia() {
+	public double pegaMedia() {
 		return somaDasAvaliacoes / totalDeAvaliacoes;
 	}
 	
 	//ATRAVÉS DOS GETTERS TORNAMOS AS REGRAS DE NEGÓCIOS RECURSIVAS
-	int getTotalDeAvaliacoes() {
+	public int getTotalDeAvaliacoes() {
 		return totalDeAvaliacoes;
 	}
 }

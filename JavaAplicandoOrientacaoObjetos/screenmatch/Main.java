@@ -1,5 +1,7 @@
 package screenmatch;
 
+import br.com.alura.screenmatch.modelos.Filme;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class Main {
 		meuFilme.avalia(6);
 		meuFilme.avalia(3);
 		meuFilme.avalia(9);
+		//meuFilme.nome. SEM O O ENCAPSULAMENTO, PODEMOS ACESSAR OS MÉTODOS DA CLASSE String
 		
 		System.out.println("A média de avaliações do filme é de: " + meuFilme.pegaMedia());
 		
