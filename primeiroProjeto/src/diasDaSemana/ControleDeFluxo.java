@@ -1,4 +1,4 @@
-package controleDeFluxo;
+package diasDaSemana;
 
 import javax.swing.JOptionPane;
 
