@@ -1,6 +1,8 @@
 package screenmatch;
 
 import br.com.alura.screematch.calculos.CalculadoraDeTempo;
+import br.com.alura.screematch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 /*A IMPORTAÇÃO DO PACOTE COM A CLASSE FILME, GARANTE
  * QUE ESSA CLASSE MAIN UTILIZE SEUS MÉTODOS
  */
@@ -26,7 +28,6 @@ public class Main {
 		meuFilme.avalia(8);
 		meuFilme.avalia(6);
 		meuFilme.avalia(3);
-		meuFilme.avalia(9);
 		
 		//INVOCAÇÃO DO MÉTODO DENTRO DO PRINT
 		System.out.println("A média de avaliações do filme é de: " + meuFilme.pegaMedia());
@@ -51,6 +52,9 @@ public class Main {
 		outroFilme.setDuracaoEmMinutos(210);
 		outroFilme.setIncluidoNoPlano(true);
 		outroFilme.exibeFichaTecnica();
+		meuFilme.avalia(1);
+		meuFilme.avalia(1);
+		meuFilme.avalia(3);
 		
 		CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
 		//CALCULADORA DE TEMPO TOTAL 
@@ -58,6 +62,15 @@ public class Main {
 		calculadora.inclui(outroFilme);
 		calculadora.inclui(serie);
 		System.out.println(calculadora.getTempoTotal());
-	
+		
+		FiltroRecomendacao filtro = new FiltroRecomendacao();
+		filtro.filtra(meuFilme);
+		filtro.filtra(outroFilme);
+		
+		Episodio episodio = new Episodio();
+		episodio.setNumero(1);
+		episodio.setSerie(serie);
+		episodio.setTotalVisualizacoes(300);
+			
 	}
 }
