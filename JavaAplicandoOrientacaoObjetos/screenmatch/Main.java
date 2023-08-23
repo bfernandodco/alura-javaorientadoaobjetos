@@ -4,6 +4,7 @@ package screenmatch;
  * QUE ESSA CLASSE MAIN UTILIZE SEUS MÉTODOS
  */
 import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
 
 public class Main {
 
@@ -12,6 +13,7 @@ public class Main {
 		 * A VARIÁVEL meuFilme É A REFERENCIA AO OBJETO Filme INSTANCIADO
 		 */
 		Filme meuFilme = new Filme();
+		Serie serie = new Serie();
 		
 		/* A PARTIR DO ENCAPSULAMENTO DOS ATRIBUTOS DA CLASSE FILME, NÃO É MAIS
 		 * PERMITIDO ALTERAR OS ATRIBUTOS DE FORMA DIRETA. ISSO GARANTE
@@ -37,12 +39,12 @@ public class Main {
 		
 		//INVOCAÇÃO DO MÉTODO DENTRO DO PRINT
 		System.out.println("A média de avaliações do filme é de: " + meuFilme.pegaMedia());
-		
-		/*O MODIFICADOR DE ACESSO PRIVATE NO MÉTODO INVOCADO NÃO PERMITE
-		 * ALTERAÇÕES DIRETAS NA SUA INVOCAÇÃO, PODENDO SER ACESSADO APENAS
-		 * DENTRO DA PRÓPRIA CLASSE.
-		 */
-		
 		System.out.println(meuFilme.getTotalDeAvaliacoes());
+		
+		//UTILIZANDO A HERANÇA É POSSÍVEL UTILIZAR ATRIBUTOS E MÉTODOS DA MÃE
+		serie.setNome("Breaking Bad");
+		serie.setTemporada(5);
+		serie.setAnoDeLancamento(2015);
+		serie.setEpisodiosPorTemporada(10);
 	}
 }
