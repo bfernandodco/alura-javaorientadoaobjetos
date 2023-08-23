@@ -7,7 +7,6 @@ public class Condicional {
 		//VARIÁVEIS
 		int anoDeLancamento = 2022;
 		boolean incluidoNoPlano = true;
-		double notaDoFilme = 8.1;
 		String tipoPlano = "plus";
 		
 		if (anoDeLancamento >= 2022) {
