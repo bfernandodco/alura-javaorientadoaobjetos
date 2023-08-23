@@ -1,4 +1,4 @@
-package primeirosPassos;
+package conversorDeTemperatura;
 
 import javax.swing.JOptionPane;
 
