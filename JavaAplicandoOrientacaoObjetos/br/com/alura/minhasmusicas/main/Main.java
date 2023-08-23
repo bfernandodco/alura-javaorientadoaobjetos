@@ -1,5 +1,6 @@
 package br.com.alura.minhasmusicas.main;
 
+import br.com.alura.minhasmusicas.modelos.MinhasPreferidas;
 import br.com.alura.minhasmusicas.modelos.Musica;
 import br.com.alura.minhasmusicas.modelos.Podcast;
 
@@ -7,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Musica musica = new Musica();
-		musica.setTitutlo("The Phantom of Opera");
+		musica.setTitulo("The Phantom of Opera");
 		musica.setArtista("Nightwish");
 		musica.setAlbum("Once");
 		
@@ -20,7 +21,7 @@ public class Main {
 		}
 		
 		Podcast podcast = new Podcast();
-		podcast.setTitutlo("Boas práticas em Java");
+		podcast.setTitulo("Boas práticas em Java");
 		podcast.setApresentador("Paulo Silveira");
 		podcast.setDescricao("Desenvolvimento de código limpo e organizado");
 		podcast.setTempo(40);
@@ -32,5 +33,9 @@ public class Main {
 		for (int i = 0; i < 1000; i++) {
 			podcast.curte();
 		}
+		
+		MinhasPreferidas preferidas = new MinhasPreferidas();
+		preferidas.inclui(musica);
+		preferidas.inclui(podcast);
 	}
 }

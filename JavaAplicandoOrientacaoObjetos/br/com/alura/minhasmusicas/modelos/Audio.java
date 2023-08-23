@@ -1,17 +1,17 @@
 package br.com.alura.minhasmusicas.modelos;
 
 public class Audio {
-	private String titutlo;
+	private String titulo;
 	private int totalReproducoes;
 	private int totalCurtidas;
 	private int classificacao;
 	
-	public String getTitutlo() {
-		return titutlo;
+	public String getTitulo() {
+		return titulo;
 	}
 	
-	public void setTitutlo(String titutlo) {
-		this.titutlo = titutlo;
+	public void setTitulo(String titutlo) {
+		this.titulo = titutlo;
 	}
 	
 	public int getTotalReproducoes() {

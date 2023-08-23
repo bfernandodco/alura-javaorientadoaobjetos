@@ -28,4 +28,13 @@ public class Podcast extends Audio{
 	public void setTempo(double tempo) {
 		this.tempo = tempo;
 	}
+	
+	@Override
+	public int getClassificacao() {
+		if (this.getTotalCurtidas() > 500) {
+			return 10;
+		} else {
+			return 8;
+		}
+	}
 }
