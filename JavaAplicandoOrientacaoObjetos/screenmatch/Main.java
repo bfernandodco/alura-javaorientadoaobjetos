@@ -39,12 +39,15 @@ public class Main {
 		
 		//INVOCAÇÃO DO MÉTODO DENTRO DO PRINT
 		System.out.println("A média de avaliações do filme é de: " + meuFilme.pegaMedia());
-		System.out.println(meuFilme.getTotalDeAvaliacoes());
+		System.out.println("Tivemos um total de " + meuFilme.getTotalDeAvaliacoes() + " avaliações");
 		
 		//UTILIZANDO A HERANÇA É POSSÍVEL UTILIZAR ATRIBUTOS E MÉTODOS DA MÃE
 		serie.setNome("Breaking Bad");
 		serie.setTemporada(5);
 		serie.setAnoDeLancamento(2015);
 		serie.setEpisodiosPorTemporada(10);
+		serie.setMinutosPorEpisodio(50);
+		
+		System.out.println("Duração para maratonar Breaking Bad: " + serie.getDuracaoEmMinutos());
 	}
 }

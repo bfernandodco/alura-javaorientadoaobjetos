@@ -1,5 +1,9 @@
 package br.com.alura.screenmatch.modelos;
 
+/*
+ * A HERANÇA PERMITE TORNAR O CÓDIGO MAIS UTILIZÁVEL
+ */
+
 //SUPERCLASSE
 public class Titulo {
 	private String nome;
