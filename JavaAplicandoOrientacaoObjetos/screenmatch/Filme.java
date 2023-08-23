@@ -1,12 +1,12 @@
 package screenmatch;
 
 public class Filme {
-	String nome;
-	int anoDeLancamento;
+	private String nome;
+	private int anoDeLancamento;
 	boolean incluidoNoPlano;
-	double avaliacao;
-	double somaDasAvaliacoes;
-	int totalDeAvaliacoes;
+	private double avaliacao;
+	private double somaDasAvaliacoes;
+	private int totalDeAvaliacoes;
 	int duracaoEmMinutos;
 	
 	//VOID NÃO DEVOLVE VALORES
@@ -26,5 +26,10 @@ public class Filme {
 	//MÉTODO COM TIPO DEFINIDO RETORNAM VALORES
 	double pegaMedia() {
 		return somaDasAvaliacoes / totalDeAvaliacoes;
+	}
+	
+	//ATRAVÉS DOS GETTERS TORNAMOS AS REGRAS DE NEGÓCIOS RECURSIVAS
+	int getTotalDeAvaliacoes() {
+		return totalDeAvaliacoes;
 	}
 }
