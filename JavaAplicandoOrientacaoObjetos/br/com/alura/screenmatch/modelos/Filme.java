@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-import br.com.alura.screematch.calculos.Classificavel;
+import br.com.alura.screenmatch.calculos.Classificavel;
 
 //A CLASSE FILME ESTA HERDANDO OS MÉTODOS E ATRIBUTOS DA CLASSE TITULO
 //É OBRIGATÓRIO O USO DO MÉTODO DA INTERFACE

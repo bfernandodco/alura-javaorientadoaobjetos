@@ -1,7 +1,7 @@
 package screenmatch;
 
-import br.com.alura.screematch.calculos.CalculadoraDeTempo;
-import br.com.alura.screematch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
 /*A IMPORTAÇÃO DO PACOTE COM A CLASSE FILME, GARANTE
  * QUE ESSA CLASSE MAIN UTILIZE SEUS MÉTODOS
@@ -44,7 +44,7 @@ public class Main {
 		
 		Filme outroFilme = new Filme();
 
-		/*COM OS SETTERS DEFINIDOS, UTILIZAMOS PARA MANIPULAR AS VARIÁVEIS
+		/*COM OS SETTERS DEFINIDOS, UTILIZAMOS PARA MODIFICAR AS VARIÁVEIS
 		 * DO OBJETO INSTANCIADO
 		 */
 		outroFilme.setNome("Lord of the Rings");
@@ -56,8 +56,8 @@ public class Main {
 		meuFilme.avalia(1);
 		meuFilme.avalia(3);
 		
-		CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
 		//CALCULADORA DE TEMPO TOTAL 
+		CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
 		calculadora.inclui(meuFilme);
 		calculadora.inclui(outroFilme);
 		calculadora.inclui(serie);
