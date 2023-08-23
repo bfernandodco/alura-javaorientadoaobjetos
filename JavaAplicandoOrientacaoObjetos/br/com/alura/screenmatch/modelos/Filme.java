@@ -1,7 +1,7 @@
 package br.com.alura.screenmatch.modelos;
 
 public class Filme {
-	public String nome;
+	private String nome;
 	private int anoDeLancamento;
 	boolean incluidoNoPlano;
 	private double avaliacao;
@@ -28,8 +28,38 @@ public class Filme {
 		return somaDasAvaliacoes / totalDeAvaliacoes;
 	}
 	
-	//ATRAVÉS DOS GETTERS TORNAMOS AS REGRAS DE NEGÓCIOS RECURSIVAS
+	//ATRAVÉS DOS GETTERS TORNAMOS AS REGRAS DE NEGÓCIOS RECURSIVAS E ACESSÍVEIS
 	public int getTotalDeAvaliacoes() {
 		return totalDeAvaliacoes;
+	}
+
+	//OS SETTERS PERMITEM A MANIPULAÇÃO DOS ATRIBUTOS
+	public void setNome(String nome) {
+		//O this FAZ REFERÊNCIA AO ATRIBUTO DA CLASSE
+		this.nome = nome;
+	}
+
+	public int getAnoDeLancamento() {
+		return anoDeLancamento;
+	}
+
+	public void setAnoDeLancamento(int anoDeLancamento) {
+		this.anoDeLancamento = anoDeLancamento;
+	}
+
+	public boolean isIncluidoNoPlano() {
+		return incluidoNoPlano;
+	}
+
+	public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+		this.incluidoNoPlano = incluidoNoPlano;
+	}
+
+	public int getDuracaoEmMinutos() {
+		return duracaoEmMinutos;
+	}
+
+	public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+		this.duracaoEmMinutos = duracaoEmMinutos;
 	}
 }
