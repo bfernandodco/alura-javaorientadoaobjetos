@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="JavaCriandoSuaPrimeiraAplicacao"/>
 	<classpathentry kind="src" path="JavaAplicandoOrientacaoObjetos"/>
+	<classpathentry kind="src" path="JavaTrabalhandoComListasEColecoesDeDados"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
