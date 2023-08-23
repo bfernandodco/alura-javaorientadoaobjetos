@@ -47,5 +47,21 @@ public class Main {
 						Boas vindas ao curso de Java.
 						Teremos %d aulas para te mostrar o que é preciso para você mergulhar no Java
 						""".formatted(nome2,aulas);
+		
+		//CASTING EXPLICITO
+		int classificacao = (int) (media /2);
+		System.out.println(classificacao);
+		
+		//CASTING IMPLÍCITO
+		int x = 10;
+		double y = x;
+		System.out.println(y);
+		
+		//A CONCATENAÇÃO PODE SER REALIZADA ENTRE MAIS DE UM TIPO DE VARIÁVEIS
+		String saudacao = "Olá, meu nome é ";
+		String pessoa = "Alice ";
+		String minhaIdade = "Minha idade é: ";
+		int anos = 17;
+		System.out.println(saudacao + pessoa + minhaIdade + anos);
 	}
 }
