@@ -1,21 +1,17 @@
 package br.com.alura.ArquivosErrosAPI.screenmatch.modelos;
 
-import com.google.gson.annotations.SerializedName;
+import br.com.alura.ArquivosErrosAPI.screenmatch.excecao.ErroDeConversaoDeAnoException;
 
 /*
  * A HERANÇA PERMITE TORNAR O CÓDIGO MAIS UTILIZÁVEL
- */
-
-/*
+ *
  * SUPERCLASSE/CLASSE MÃE/CLASSE PRINCIPAL
  * IMPLEMENTAÇÃO DA CLASSE Comparable<> POSSIBILITA A COMPARAÇÃO DE LISTAS
  * ALÉM DA CLASSE Comparable, O JAVA POSSUI UMA OUTRA INTERFACE CHAMADA
  * Comparator, QUE NOS FORNECE OUTRA ALTERNATIVA PARA ORDENAÇÃO DE DADOS
  */
 public class Titulo implements Comparable<Titulo>{
-	@SerializedName("Title")
 	private String nome;
-	@SerializedName("Year")
 	private int anoDeLancamento;
 	boolean incluidoNoPlano;
 	private double avaliacao;
@@ -31,8 +27,12 @@ public class Titulo implements Comparable<Titulo>{
 	
 	public Titulo(TituloOmdb meuTitulo) {
 		this.nome = meuTitulo.title();
+		if(meuTitulo.year().length() > 4) {
+			throw new ErroDeConversaoDeAnoException("Não foi possível converter"
+					+ " o ano, pois tem mais de 4 caracteres");
+		}
 		this.anoDeLancamento = Integer.valueOf(meuTitulo.year());
-		this.duracaoEmMinutos = Integer.valueOf(meuTitulo.runtime().substring(0, 2));
+		this.duracaoEmMinutos = Integer.valueOf(meuTitulo.runtime().substring(0, 3));
 ;	}
 
 	//VOID NÃO DEVOLVE VALORES

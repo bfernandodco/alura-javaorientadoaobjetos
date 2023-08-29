@@ -2,6 +2,7 @@ package br.com.alura.ArquivosErrosAPI.screenmatch;
 
 import com.google.gson.*;
 
+import br.com.alura.ArquivosErrosAPI.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import br.com.alura.ArquivosErrosAPI.screenmatch.modelos.Titulo;
 import br.com.alura.ArquivosErrosAPI.screenmatch.modelos.TituloOmdb;
 
@@ -19,42 +20,55 @@ public class MainBusca {
 		System.out.println("Digite um filme para a busca");
 		var filme = leitura.nextLine();
 		
-		String endereco = "http://www.omdbapi.com/?t=" + filme + 
+		String endereco = "http://www.omdbapi.com/?t=" + filme.replace(" ", "+") + 
 				"&apikey=fd9f2b16";
-		
-		HttpClient client = HttpClient.newHttpClient();
-		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create(endereco)).build();
-		HttpResponse<String> response = client.send
-				(request, HttpResponse.BodyHandlers.ofString());
-		String json = response.body();
-		System.out.println(response.body());
-		
+		try {
+			HttpClient client = HttpClient.newHttpClient();
+			HttpRequest request = HttpRequest.newBuilder()
+					.uri(URI.create(endereco)).build();
+			HttpResponse<String> response = client.send
+					(request, HttpResponse.BodyHandlers.ofString());
+			String json = response.body();
+			System.out.println(response.body());
+			
+			/*
+			 * TRANSFORMANDO CLASSE Titulo EM UM Gson
+			 *Gson gsonTitulo = new Gson();
+			  gsonTitulo.fromJson(json, Titulo.class);
+			 *System.out.println("Titulo: " + meuTitulo);
+			*/
+			
+			/*
+			 * USANDO GsonBuilder(); PARA APLICAR UPPER NAS 
+			 * VARIAVEIS DO RECORD TituloOmdb
+			 *
+			 *
+			 * Gson gsonMeuTituloOmdb = new GsonBuilder().setFieldNamingPolicy
+			 * (FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+			 * TituloOmdb meuTituloOmdb = gsonMeuTituloOmdb.fromJson(json, TituloOmdb.class);
+			 * System.out.println("Titulo: " + meuTituloOmdb);
+			 */
+					
+			
+			Gson gsonMeuTitulo = new GsonBuilder().setFieldNamingPolicy
+					(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+			TituloOmdb meuTituloOmdb = gsonMeuTitulo.fromJson(json, TituloOmdb.class);
+			System.out.println("\nTitulo: " + meuTituloOmdb);
+			
+			Titulo meuTitulo = new Titulo(meuTituloOmdb);
+			System.out.println("Meu Título já convertido" + meuTitulo);
+		} catch (NumberFormatException e) {
+			System.out.println("Aconteceu um erro:\n");
+			System.out.println(e.getMessage());
+		} catch (IllegalArgumentException e) {
+			System.out.println("\nOcorreu um erro na busca\n");
+			System.out.println(e.getMessage());
+		} catch (ErroDeConversaoDeAnoException e) {
+			System.out.println(e.getMessage());
 		/*
-		 * TRANSFORMANDO CLASSE Titulo EM UM Gson
-		 *Gson gsonTitulo = new Gson();
-		  gsonTitulo.fromJson(json, Titulo.class);
-		 *System.out.println("Titulo: " + meuTitulo);
-		*/
-		
-		/*
-		 * USANDO GsonBuilder(); PARA APLICAR UPPER NAS 
-		 * VARIAVEIS DO RECORD TituloOmdb
-		 *
-		 *
-		 * Gson gsonMeuTituloOmdb = new GsonBuilder().setFieldNamingPolicy
-		 * (FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-		 * TituloOmdb meuTituloOmdb = gsonMeuTituloOmdb.fromJson(json, TituloOmdb.class);
-		 * System.out.println("Titulo: " + meuTituloOmdb);
+		 * } finally {
+			System.out.println("O programa finalizou corretamente");
 		 */
-				
-		
-		Gson gsonMeuTitulo = new GsonBuilder().setFieldNamingPolicy
-				(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-		TituloOmdb meuTituloOmdb = gsonMeuTitulo.fromJson(json, TituloOmdb.class);
-		System.out.println("Titulo: " + meuTituloOmdb);
-		Titulo meuTitulo = new Titulo(meuTituloOmdb);
-		System.out.println("Meu Título já convertido" + meuTitulo);
-		
+		}
 	}
 }
