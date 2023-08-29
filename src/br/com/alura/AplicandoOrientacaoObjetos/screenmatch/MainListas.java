@@ -1,6 +1,7 @@
 package br.com.alura.AplicandoOrientacaoObjetos.screenmatch;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import br.com.alura.AplicandoOrientacaoObjetos.screenmatch.modelos.Filme;
 import br.com.alura.AplicandoOrientacaoObjetos.screenmatch.modelos.Serie;
@@ -32,5 +33,23 @@ public class MainListas {
 			
 		//PERCORRENDO UMA LISTA COM FOR EACH
 		lista.forEach(System.out::println);
+		
+		//ORDENANDO LISTAS
+		ArrayList<String> buscaPorArtista = new ArrayList<>();
+		buscaPorArtista.add("Daniel Radclif");
+		buscaPorArtista.add("Rami Malek");
+		buscaPorArtista.add("Jason Statham");
+		/*
+		 * O MÉTODO SORT DA CLASSE COLLETCTIONS ORDENA UMA LISTA DE STRINGS
+		 * EM ORDEM ALFABÉTICA
+		 */
+		Collections.sort(buscaPorArtista);
+		System.out.println("Depois da ordenação :\n" + buscaPorArtista);
+		/*
+		 * APOS IMPLEMENTAR A CLASSE COMPARABLE NA CLASSE TITULO REESCREVEMOS
+		 * O MÉTODO CompareTo() PARA COMPARAR OS NOMES E ORDENA-LOS DE AZ
+		 */
+		Collections.sort(lista);
+		System.out.println("Lista de titulos ordenados: \n" + lista);
 	}
 }
