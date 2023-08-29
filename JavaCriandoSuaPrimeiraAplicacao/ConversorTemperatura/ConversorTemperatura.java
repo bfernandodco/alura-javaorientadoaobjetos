@@ -1,4 +1,4 @@
-package conversorDeTemperatura;
+package ConversorTemperatura;
 
 import javax.swing.JOptionPane;
 

@@ -43,6 +43,10 @@ public class Titulo {
 			//O this FAZ REFERÊNCIA AO ATRIBUTO DA CLASSE
 			this.nome = nome;
 		}
+		
+		public String getNome() {
+			return nome;
+		}
 
 		public int getAnoDeLancamento() {
 			return anoDeLancamento;

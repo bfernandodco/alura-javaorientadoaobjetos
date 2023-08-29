@@ -1,5 +1,6 @@
-package br.alura.screenmatch;
+package br.com.alura.screenmatch;
 
+import java.util.ArrayList;
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -12,7 +13,8 @@ import br.com.alura.screenmatch.modelos.Serie;
 public class Main {
 
 	public static void main(String[] args) {
-		/*INSTANCIAR UM OBJETO DA CLASSE FILME
+		/*
+		 * INSTANCIAR UM OBJETO DA CLASSE FILME
 		 * A VARIÁVEL meuFilme É A REFERENCIA AO OBJETO Filme INSTANCIADO
 		 */
 		Filme meuFilme = new Filme();
@@ -71,6 +73,28 @@ public class Main {
 		episodio.setNumero(1);
 		episodio.setSerie(serie);
 		episodio.setTotalVisualizacoes(300);
-			
+		
+
+		//A VARIÁVEL VAR REALIZA UMA INFERÊNCIA DO TIPO DECLARADO
+		var filmeDoBruno = new Filme();
+		filmeDoBruno.setDuracaoEmMinutos(200);
+		filmeDoBruno.setNome("Harry Potter");
+		filmeDoBruno.setAnoDeLancamento(2001);
+		filmeDoBruno.avalia(10);
+		
+		//CRIANDO UMA LISTA DE FILMES COM ARRAYLIST
+		ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+		listaDeFilmes.add(filmeDoBruno);
+		listaDeFilmes.add(meuFilme);
+		listaDeFilmes.add(outroFilme);
+		System.out.println("Tamanho da lista " + listaDeFilmes.size());
+		System.out.println("Primeiro filme " + listaDeFilmes.get(0).getNome());
+		/*
+		 * RETORNA O toString() da Classe Object
+		 * REESCREVEMOS O MÉTODO toString() PARA RETORNAR UMA String MODIFICADA
+		 * COM OS VALORES DA LISTA
+		 */
+		System.out.println(listaDeFilmes);
+		
 	}
 }

@@ -24,9 +24,9 @@ import br.com.alura.screenmatch.calculos.Classificavel;
 	public int getClassificacao() {
 		return (int) pegaMedia();
 	}
-
+	
 	@Override
-	public String getNome() {
-		return getNome();
+	public String toString() {
+		return "Filme: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
 	}
 }
