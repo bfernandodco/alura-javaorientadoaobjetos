@@ -2,6 +2,7 @@ package br.com.alura.AplicandoOrientacaoObjetos.screenmatch;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 import br.com.alura.AplicandoOrientacaoObjetos.screenmatch.modelos.Filme;
 import br.com.alura.AplicandoOrientacaoObjetos.screenmatch.modelos.Serie;
@@ -44,12 +45,22 @@ public class MainListas {
 		 * EM ORDEM ALFABÉTICA
 		 */
 		Collections.sort(buscaPorArtista);
-		System.out.println("Depois da ordenação :\n" + buscaPorArtista);
+		System.out.println("\nDepois da ordenação :\n" + buscaPorArtista + "\n");
 		/*
 		 * APOS IMPLEMENTAR A CLASSE COMPARABLE NA CLASSE TITULO REESCREVEMOS
 		 * O MÉTODO CompareTo() PARA COMPARAR OS NOMES E ORDENA-LOS DE AZ
 		 */
 		Collections.sort(lista);
-		System.out.println("Lista de titulos ordenados: \n" + lista);
+		System.out.println("Lista de titulos ordenados: \n" + lista + "\n");
+		
+		/*
+		 * USAR O .sort DIRETO NUM OBJETO ArrayList<>() É A MANEIRA MAIS
+		 * MODERNA DE ORDENAR UMA LISTA POR COMPARAÇÃO
+		 * A CLASSE Comparator POSSUI UM MÉTODO ESTÁTICO comparing
+		 * QUE FAZ A ORDENAÇÃO DE ACORDO COM A CLASSE PRINCIPAL E
+		 * O UM MÉTODO get
+		 */
+		lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+		System.out.println("Comparando com a Classe Comparator e seu método estático comparing: \n" + lista + "\n");
 	}
 }
