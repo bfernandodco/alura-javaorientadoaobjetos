@@ -1,4 +1,4 @@
-package br.com.alura.minhasmusicas.main;
+package br.com.alura.minhasmusicas;
 
 import br.com.alura.minhasmusicas.modelos.MinhasPreferidas;
 import br.com.alura.minhasmusicas.modelos.Musica;

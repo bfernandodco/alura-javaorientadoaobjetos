@@ -15,5 +15,6 @@ public class ConversorTemperatura {
 		//CÁLCULO DE CONVERSÃO
 		double fahrenheit = (grausCelsius * 1.8) + 32;
 		System.out.printf("A temperatura de %s°C em Fahrenheit é de: %.0f°F",celsius,fahrenheit);
+		System.out.println(System.getProperty("file.encoding"));
 	}
 }

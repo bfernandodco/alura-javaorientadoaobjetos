@@ -1,4 +1,4 @@
-package screenmatch;
+package br.alura.screenmatch;
 
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
