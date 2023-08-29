@@ -1,4 +1,4 @@
-package br.com.alura.GravandoArquivosLidandoComErrosConsumindoAPI;
+package br.com.alura.ArquivosErrosAPI.screenmatch;
 
 import java.io.IOException;
 import java.net.URI;
