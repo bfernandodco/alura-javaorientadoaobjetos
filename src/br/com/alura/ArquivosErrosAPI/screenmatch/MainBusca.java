@@ -6,6 +6,7 @@ import br.com.alura.ArquivosErrosAPI.screenmatch.excecao.ErroDeConversaoDeAnoExc
 import br.com.alura.ArquivosErrosAPI.screenmatch.modelos.Titulo;
 import br.com.alura.ArquivosErrosAPI.screenmatch.modelos.TituloOmdb;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -57,6 +58,11 @@ public class MainBusca {
 			
 			Titulo meuTitulo = new Titulo(meuTituloOmdb);
 			System.out.println("Meu Título já convertido" + meuTitulo);
+			
+			FileWriter escrita = new FileWriter("filmes.txt");
+			escrita.write(meuTitulo.toString() + "\n");
+			escrita.close();
+			
 		} catch (NumberFormatException e) {
 			System.out.println("Aconteceu um erro:\n");
 			System.out.println(e.getMessage());

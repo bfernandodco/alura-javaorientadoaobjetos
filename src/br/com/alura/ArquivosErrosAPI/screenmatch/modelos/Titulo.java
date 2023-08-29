@@ -32,7 +32,7 @@ public class Titulo implements Comparable<Titulo>{
 					+ " o ano, pois tem mais de 4 caracteres");
 		}
 		this.anoDeLancamento = Integer.valueOf(meuTitulo.year());
-		this.duracaoEmMinutos = Integer.valueOf(meuTitulo.runtime().substring(0, 3));
+		this.duracaoEmMinutos = Integer.valueOf(meuTitulo.runtime().substring(0, 2));
 ;	}
 
 	//VOID NÃO DEVOLVE VALORES
