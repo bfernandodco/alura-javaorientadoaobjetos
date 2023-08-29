@@ -1,6 +1,15 @@
 package br.com.alura.screenmatch.modelos;
 
 public class Serie extends Titulo {
+	
+	/*
+	 * MÉTODO CONSTRUTOR PARA INICIAR O CONSTRUTOR COM PARÂMETROS
+	 * EXPLICITANDO O CONSTRUTOR DE HERANÇA DA CLASSE TITULO
+	 */
+	public Serie(String nome, int anoDeLancamento) {
+		super(nome, anoDeLancamento) ;
+	}
+
 	private int temporada;
 	private int episodiosPorTemporada;
 	private boolean ativa;

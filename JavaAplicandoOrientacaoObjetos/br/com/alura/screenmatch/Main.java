@@ -17,13 +17,13 @@ public class Main {
 		 * INSTANCIAR UM OBJETO DA CLASSE FILME
 		 * A VARIÁVEL meuFilme É A REFERENCIA AO OBJETO Filme INSTANCIADO
 		 */
-		Filme meuFilme = new Filme();
+		Filme meuFilme = new Filme("The God Father", 1970);
 
 		/*COM OS SETTERS DEFINIDOS, UTILIZAMOS PARA MANIPULAR AS VARIÁVEIS
 		 * DO OBJETO INSTANCIADO
 		 */
-		meuFilme.setNome("The God Father");
-		meuFilme.setAnoDeLancamento(1970);
+		//meuFilme.setNome();
+		//meuFilme.setAnoDeLancamento();
 		meuFilme.setDuracaoEmMinutos(180);
 		meuFilme.setIncluidoNoPlano(true);
 		meuFilme.exibeFichaTecnica();
@@ -35,22 +35,24 @@ public class Main {
 		System.out.println("A média de avaliações do filme é de: " + meuFilme.pegaMedia());
 		System.out.println("Tivemos um total de " + meuFilme.getTotalDeAvaliacoes() + " avaliações");
 		
-		Serie serie = new Serie();
+		Serie serie = new Serie("Breaking Bad", 2015);
 		//UTILIZANDO A HERANÇA É POSSÍVEL UTILIZAR ATRIBUTOS E MÉTODOS DA MÃE
-		serie.setNome("Breaking Bad");
+		//serie.setNome();
+		//serie.setAnoDeLancamento();
 		serie.setTemporada(5);
-		serie.setAnoDeLancamento(2015);
+		
 		serie.setEpisodiosPorTemporada(10);
 		serie.setMinutosPorEpisodio(50);
 		System.out.println("Duração para maratonar Breaking Bad: " + serie.getDuracaoEmMinutos());
 		
-		Filme outroFilme = new Filme();
+		Filme outroFilme = new Filme("Lord of the Rings", 2003);
 
-		/*COM OS SETTERS DEFINIDOS, UTILIZAMOS PARA MODIFICAR AS VARIÁVEIS
+		/*
+		 * COM OS SETTERS DEFINIDOS, UTILIZAMOS PARA MODIFICAR AS VARIÁVEIS
 		 * DO OBJETO INSTANCIADO
 		 */
-		outroFilme.setNome("Lord of the Rings");
-		outroFilme.setAnoDeLancamento(2003);
+		//outroFilme.setNome("Lord of the Rings");
+		//outroFilme.setAnoDeLancamento();
 		outroFilme.setDuracaoEmMinutos(210);
 		outroFilme.setIncluidoNoPlano(true);
 		outroFilme.exibeFichaTecnica();
@@ -75,11 +77,17 @@ public class Main {
 		episodio.setTotalVisualizacoes(300);
 		
 
-		//A VARIÁVEL VAR REALIZA UMA INFERÊNCIA DO TIPO DECLARADO
-		var filmeDoBruno = new Filme();
+		/*
+		 * A VARIÁVEL VAR REALIZA UMA INFERÊNCIA DO TIPO DECLARADO
+		 * É POSSÍVEL PASSAR PARÂMETROS NO MÉTODO CONSTRUTOR ATRAVÉS DE UM SETTER. 
+		 * PARA ISSO, DEVE-SE CRIAR UM MÉTODO set PARA O CONSTRUTOR DE ACORDO
+		 * COM O PARÂMETRO QUE QUEREMOS QUE ELE SE INICIE
+		 * LOCALIZAÇÃO DO set: CLASSE FILME
+		 */
+		var filmeDoBruno = new Filme("Harry Potter", 2001);
+		//filmeDoBruno.setNome("Harry Potter");
+		//filmeDoBruno.setAnoDeLancamento(2001);
 		filmeDoBruno.setDuracaoEmMinutos(200);
-		filmeDoBruno.setNome("Harry Potter");
-		filmeDoBruno.setAnoDeLancamento(2001);
 		filmeDoBruno.avalia(10);
 		
 		//CRIANDO UMA LISTA DE FILMES COM ARRAYLIST
@@ -95,6 +103,8 @@ public class Main {
 		 * COM OS VALORES DA LISTA
 		 */
 		System.out.println(listaDeFilmes);
+		
+		
 		
 	}
 }

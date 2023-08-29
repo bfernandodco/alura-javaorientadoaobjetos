@@ -14,6 +14,12 @@ public class Titulo {
 	private int totalDeAvaliacoes;
 	int duracaoEmMinutos;
 	
+	//METODO CONSTRUTOR
+	public Titulo(String nome, int anoDeLancamento) {
+		this.nome = nome;
+		this.anoDeLancamento = anoDeLancamento;
+	}
+
 	//VOID NÃO DEVOLVE VALORES
 		public void exibeFichaTecnica() {
 			System.out.println("Nome do filme: " + nome);
