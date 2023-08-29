@@ -3,6 +3,8 @@ package br.com.alura.AplicandoOrientacaoObjetos.screenmatch;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 import br.com.alura.AplicandoOrientacaoObjetos.screenmatch.modelos.Filme;
 import br.com.alura.AplicandoOrientacaoObjetos.screenmatch.modelos.Serie;
@@ -62,5 +64,20 @@ public class MainListas {
 		 */
 		lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
 		System.out.println("Comparando com a Classe Comparator e seu método estático comparing: \n" + lista + "\n");
+		
+		
+		/*
+		 * É UM BOM HABÍTO TRATAR OS OBJETOS DE FORMA GENÉRICA
+		 * NESTE CASO, A CLASSE LinkedList IMPLEMENTA A INTERFACE List
+		 * QUE ESTENDE Collection, E FORNECE UMA LISTA ENCADEADA
+		 * O QUE SIGNIFICA QUE CADA ELEMENTO DA LISTA É UM OBJETO QUE CONTÉM
+		 * UMA REFERÊNCIA PARA O PRÓXIMO ELEMENTO, PERMITINDO QUE QUALQUER
+		 * ELEMENTO SEJA ADICIONADO OU REMOVIDO DE MANEIRA EFICIENTE EM
+		 * QUALQUER POSIÇÃO DA LISTA
+		 */
+		List<Titulo> buscaArtista = new LinkedList<>();
+		buscaArtista.add(meuFilme);
+		buscaArtista.add(outroFilme);
+		buscaArtista.add(filmeDoBruno);
 	}
 }
