@@ -1,5 +1,7 @@
 package br.com.alura.ArquivosErrosAPI.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 /*
  * A HERANÇA PERMITE TORNAR O CÓDIGO MAIS UTILIZÁVEL
  */
@@ -11,7 +13,9 @@ package br.com.alura.ArquivosErrosAPI.screenmatch.modelos;
  * Comparator, QUE NOS FORNECE OUTRA ALTERNATIVA PARA ORDENAÇÃO DE DADOS
  */
 public class Titulo implements Comparable<Titulo>{
+	@SerializedName("Title")
 	private String nome;
+	@SerializedName("Year")
 	private int anoDeLancamento;
 	boolean incluidoNoPlano;
 	private double avaliacao;
@@ -24,6 +28,12 @@ public class Titulo implements Comparable<Titulo>{
 		this.nome = nome;
 		this.anoDeLancamento = anoDeLancamento;
 	}
+	
+	public Titulo(TituloOmdb meuTitulo) {
+		this.nome = meuTitulo.title();
+		this.anoDeLancamento = Integer.valueOf(meuTitulo.year());
+		this.duracaoEmMinutos = Integer.valueOf(meuTitulo.runtime().substring(0, 2));
+;	}
 
 	//VOID NÃO DEVOLVE VALORES
 	public void exibeFichaTecnica() {
@@ -83,6 +93,12 @@ public class Titulo implements Comparable<Titulo>{
 		this.duracaoEmMinutos = duracaoEmMinutos;
 	}
 
+	@Override
+	public String toString() {
+		return "nome= " + nome + ", anoDeLancamento= "
+				+ anoDeLancamento + ", duracao= " + duracaoEmMinutos;
+	}
+	
 	//MÉTODO DA INTERFACE Comparable
 	@Override
 	public int compareTo(Titulo outroTitulo) {
@@ -90,3 +106,4 @@ public class Titulo implements Comparable<Titulo>{
 		return this.getNome().compareTo(outroTitulo.getNome());
 	}
 }
+
